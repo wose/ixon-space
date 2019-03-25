@@ -5,8 +5,8 @@ step = 1;
 $fn=360/step;
 
 ring_height = 10.75;
-ring_inner_r = 12.0;
-ring_outer_r = 14.0;
+ring_inner_r = 12.4;
+ring_outer_r = 14.5;
 bayonet_inner_r = 11.0;
 
 R = ring_inner_r;
@@ -84,10 +84,10 @@ union() {
 
     // fittings
     for(i=[1:3]) {
-        rotate([0, 0, -100 + i*360/3])
+        rotate([0, 0, -95 + i*360/3])
             rotate_extrude(angle = 40, convexity = 10)
-                translate([ring_outer_r-1.1, 0, -0.75])
-                    square([1.0, 0.75], true);
+                translate([ring_outer_r-1.2, -0.75, 0])
+                    square([0.8, 0.9], center=false);
     }
 
     // clamp_hook
